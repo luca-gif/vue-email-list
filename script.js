@@ -13,11 +13,11 @@ const root = new Vue({
 
                 axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((r) => {
                     this.address += '_____' + r.data.response
-                    this.flag = false
-
+                    setTimeout(() => {
+                        this.flag = false
+                    }, 2000)
                 })
             }
-
         },
     },
 
