@@ -2,7 +2,7 @@ const root = new Vue({
     el: "#root",
 
     data: {
-        address: "",
+        address: [],
         limit: 10,
         flag: true,
     },
@@ -12,7 +12,8 @@ const root = new Vue({
             for (let i = 0; i < this.limit; i++) {
 
                 axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((r) => {
-                    this.address += '_____' + r.data.response
+                    this.address.push(r.data.response);
+
                     setTimeout(() => {
                         this.flag = false
                     }, 2000)
